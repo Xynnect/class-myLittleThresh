@@ -1,0 +1,61 @@
+import java.awt.BorderLayout;
+
+import javax.swing.*;
+
+
+public class MLT extends JFrame implements Runnable{
+
+	/**
+	 * @param args
+	 */
+	static MLT a;
+	static MLT b;
+	JButton button;
+	JTextField textfield;
+	JLabel label;
+	JFrame frame;
+	JLabel numberChooser;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		a = new MLT();
+		a.run();				            	
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		button = new JButton();
+		textfield = new JTextField();
+		label = new JLabel();
+		frame = new JFrame();
+		numberChooser = new JLabel();
+		
+		Jstuffinitiator();
+	
+	}
+	public void settings(){
+	 JPanel panel = new JPanel(new BorderLayout());
+	
+	 panel.add(button, BorderLayout.NORTH);
+	 panel.add(label, BorderLayout.EAST);
+	 panel.add(textfield, BorderLayout.SOUTH);
+	 
+	b.add(panel); 
+	b.setSize(480,1080);
+    b.setVisible(true);
+	}
+	
+	public void Jstuffinitiator(){
+		
+		 SwingUtilities.invokeLater(new Runnable() {
+	            @Override
+	            public void run() { 
+	            	b = new MLT();
+	            	settings();	
+	            }
+	        });
+	}
+
+}
