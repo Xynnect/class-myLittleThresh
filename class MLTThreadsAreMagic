@@ -1,0 +1,64 @@
+import javax.swing.*;
+
+
+public class MLTThreadsAreMagic extends JFrame implements Runnable{
+
+	/**
+	 * @param args
+	 */
+	JButton button;
+	JTextField textfield;
+	JLabel label;
+	JFrame frame;
+	static MLTThreadsAreMagic t;
+	static MLTThreadsAreMagic ex;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		t = new MLTThreadsAreMagic();
+		t.run();
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		button = new JButton();
+		textfield = new JTextField();
+		label = new JLabel();
+		frame = new JFrame();
+		
+		
+		
+		 SwingUtilities.invokeLater(new Runnable() {
+	            @Override
+	            public void run() {
+	            	 ex = new MLTThreadsAreMagic();
+	            	
+	            	//frame.setSize(240,320);
+	            	
+	            	ex.setSize(240,1080);
+	            	ex.add(button);
+
+	            	
+	            	
+	            	//x.add(frame);
+	                ex.setVisible(true);
+	                
+	            }
+	        });
+		
+	
+     	
+     	
+		for(long i=1;i<=Long.MAX_VALUE;i+=11111){
+			//System.out.println(i + "");
+			button.setText(" " + i);
+		}
+		
+		
+		
+	}
+
+}
